@@ -1,5 +1,5 @@
 trigger:
-- main
+- master
 
 pool:
   vmImage: ubuntu-latest
@@ -34,7 +34,6 @@ stages:
         dotnet build -c Release -o "$(Build.ArtifactStagingDirectory)/tests"
       displayName: Build Playwright tests
       workingDirectory: $(System.DefaultWorkingDirectory)/PlaywrightTests
-
     - task: PublishBuildArtifacts@1
       displayName: Publish artifacts
       inputs:
@@ -108,7 +107,7 @@ stages:
     displayName: Deploy
     environment: Production
     variables:
-    - group: Azure-Static-Web-Apps-calm-coast-0df39b910-variable-group
+    - group: Azure-Static-Web-Apps-purple-desert-0414aea03-variable-group
     strategy:
       runOnce:
         deploy:
@@ -132,5 +131,5 @@ stages:
               skip_app_build: true
               skip_api_build: true
               verbose: true
-              azure_static_web_apps_api_token: $(AZURE_STATIC_WEB_APPS_API_TOKEN_CALM_COAST_0DF39B910)
+              azure_static_web_apps_api_token: $(AZURE_STATIC_WEB_APPS_API_TOKEN_PURPLE_DESERT_0414AEA03)
               workingDirectory: $(System.ArtifactsDirectory)/drop
