@@ -49,7 +49,7 @@ stages:
       displayName: Deploy and test
       environment: Staging
       variables:
-      - group: Azure-Static-Web-Apps-calm-coast-0df39b910-variable-group
+      - group: Azure-Static-Web-Apps-purple-desert-0414aea03-variable-group
       strategy:
         runOnce:
           deploy:
